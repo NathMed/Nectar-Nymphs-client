@@ -28,14 +28,14 @@ export const useGlobalStore = defineStore('global', () => {
 				Authorization: `Bearer ${token}`
 			}
 		})
-
 		
 		user.token = token;
-		user.email = data.email;
-		user.isAdmin = data.isAdmin;
+		user.email = data.user.email;
+		user.isAdmin = data.user.isAdmin;
 	}
 
 	return {
+		user,
 		getUserDetails
 	}
 })

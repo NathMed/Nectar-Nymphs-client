@@ -1,7 +1,7 @@
 
 <script>
 
-  // import NavbarComponent from './components/NavbarComponent.vue';
+  import NavbarComponent from './components/NavbarComponent.vue';
 
   import {useGlobalStore} from './stores/global';
 
@@ -12,13 +12,13 @@
   export default {
 
     components: {
-      // NavbarComponent
+      NavbarComponent
     },
     setup() {
 
-      const {getUserDetails} = useGlobalStore();
+      const store = useGlobalStore();
 
-      onBeforeMount(() => getUserDetails(localStorage.getItem("token")));
+      onBeforeMount(() => store.getUserDetails(localStorage.getItem("token")));
     }
   }
 
@@ -26,7 +26,7 @@
 
 <template>
 
-  <!-- <NavbarComponent /> -->
+  <NavbarComponent />
 
   <router-view />
 
