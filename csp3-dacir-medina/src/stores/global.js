@@ -23,7 +23,7 @@ export const useGlobalStore = defineStore('global', () => {
 			return;
 		}
 
-		let {data} = await axios.get(`${import.meta.env.VITE_COURSE_BOOKING_API}/users/details`, {
+		let {data} = await axios.get(`${import.meta.env.VITE_NECTAR_API}/users/details`, {
 			headers: {
 				Authorization: `Bearer ${token}`
 			}

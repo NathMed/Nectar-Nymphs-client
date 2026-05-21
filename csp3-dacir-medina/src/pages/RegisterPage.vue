@@ -9,7 +9,7 @@
 
     const firstName = ref("");
     const lastName = ref("");
-    const mobileNum = ref("");
+    const mobileNo = ref("");
     const email = ref("");
     const password = ref("");
     const confirmPassword = ref("");
@@ -20,12 +20,12 @@
 
     const router = useRouter()
 
-    const {user} = useGlobalStore();
+    const user = useGlobalStore();
 
-    watch([firstName, lastName, mobileNum, email, password, confirmPassword], (currentValue, oldValue) => {
+    watch([firstName, lastName, mobileNo, email, password, confirmPassword], (currentValue, oldValue) => {
 
     	// check if everything have value and password and confirm pass is match
-    	if (currentValue.every(input => input !== "") && currentValue[4] === currentValue[5] && currentValue[2].length === 11) {
+    	if (currentValue.every(input => input !== "") && currentValue[4] === currentValue[5]) {
     		// allow submit
     		isEnabled.value = true;
     	} else {
@@ -41,7 +41,7 @@
     			firstName: firstName.value,
                 lastName: lastName.value,
                 email: email.value,
-                mobileNum: mobileNum.value,
+                mobileNo: mobileNo.value,
                 password: password.value
     		})
 
@@ -50,37 +50,34 @@
 
     			firstName.value = "";
                 lastName.value = "";
-                mobileNum.value = "";
+                mobileNo.value = "";
                 email.value = "";
                 password.value = "";
-                confirmPass.value = "";
+                confirmPassword.value = "";
 
-                // router.push({path: '/login'}) // uncomment when we have login
+                router.push({path: '/login'}) 
     		} else {
-
-    			console.error(e); // for debugging purposes, remove when we're done
 
     			notyf.error("Registration Failed. Please contact administrator.");
     		}
     	} catch (e) {
+
     		if (e.response.status === 404 || e.response.status === 401 || e.response.status === 400 || e.response.status === 409) {
 
-    			console.error(e); // for debugging purposes, remove when we're done
-
-    			notyf.error(e.response.data.message);
+    			notyf.error(e.response.data.error);
     		} else {
-    			console.error(e); // for debugging purposes, remove when we're done
 
     			notyf.error("Registration Failed. Please contact administrator.")
     		}
     	}
     }
 
-    /*onBeforeMount(() => {
-        if(user.email){
-            router.push({path: '/products'})
+    onBeforeMount(() => {
+
+        if(localStorage.getItem("token")){
+            router.push({path: '/login'})
         }
-    })*/ // uncomment when we have product
+    })
 
 
 </script>
@@ -126,7 +123,7 @@
                         class="form-control"
                         id="mobile" 
                         placeholder="Enter your 11 digit mobile number"
-                        v-model="mobileNum" />
+                        v-model="mobileNo" />
                     </div>
 
                     <div class="mb-3">
@@ -157,7 +154,7 @@
                 </form>
             </div>
             <div class="text-center mt-3">
-                <p>Already have an account? <a href="">Click here</a> to log in. </p>
+                <p>Already have an account? <router-link :to="{ path: '/login'}">Click here</router-link> to log in. </p>
             </div>
         </div>
     </div>
