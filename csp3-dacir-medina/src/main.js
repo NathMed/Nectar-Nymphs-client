@@ -12,6 +12,8 @@ import App from './App.vue'
 import RegisterPage from './pages/RegisterPage.vue';
 import LoginPage from './pages/LoginPage.vue';
 import ProductsPage from './pages/ProductsPage.vue';
+import LogoutPage from './pages/LogoutPage.vue';
+import ProductDetailsPage from './pages/ProductDetailsPage.vue';
 
 // ROUTES
 import { createApp } from 'vue';
@@ -39,6 +41,15 @@ const router = createRouter({
             path: '/products',
             name: 'Products',
             component: ProductsPage
+        },
+        {
+            path: '/logout',
+            name: 'Logout',
+            component: LogoutPage
+        },
+        {
+            path: '/products/:id',
+            component: ProductDetailsPage
         }
     ]
 });

@@ -17,11 +17,9 @@
 
 ## Feature by Dacir, John
 
-User Resources:
 - Product Catalog Page
 
 ## Feature by Medina, Nathaniel
 
-User Resources:
 - Register Page
 - Login Page

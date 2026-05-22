@@ -41,16 +41,9 @@
                     <router-link
                         :to="{ path: '/products' }"
                         class="nav-link custom-link">
-
                         Products
                     </router-link>
 
-                    <router-link
-                        :to="{ path: '/cart' }"
-                        class="nav-link custom-link">
-
-                        Cart
-                    </router-link>
 
                     <!-- Guest Links -->
                     <template v-if="!user.email">
@@ -58,14 +51,12 @@
                         <router-link
                             :to="{ path: '/register' }"
                             class="nav-link custom-link">
-
                             Register
                         </router-link>
 
                         <router-link
                             :to="{ path: '/login' }"
                             class="btn login-btn ms-lg-2">
-
                             Login
                         </router-link>
 
@@ -73,6 +64,12 @@
 
                     <!-- User Links -->
                     <template v-if="user.email">
+
+                        <router-link
+                            :to="{ path: '/cart' }"
+                            class="nav-link custom-link">
+                            Cart
+                        </router-link>
 
                         <router-link
                             :to="{ path: '/profile' }"
