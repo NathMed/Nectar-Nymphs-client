@@ -40,7 +40,7 @@
                 password: password.value
 
             })
-            console.log(email)
+
             if(response.data) {
 
                 notyf.success("Login Successful");
