@@ -1,13 +1,10 @@
-import {defineStore} from 'pinia';
-
-import {reactive} from 'vue';
-
-import axios from 'axios';
-
+import { defineStore } from 'pinia';
+import { reactive } from 'vue';
+import api from '../api.js';
 
 export const useGlobalStore = defineStore('global', () => {
 
-	let user = reactive({
+	const user = reactive({
 		token: localStorage.getItem('token'),
 		email: null,
 		isAdmin: null
@@ -16,6 +13,7 @@ export const useGlobalStore = defineStore('global', () => {
 	async function getUserDetails(token) {
 		
 		if (!token) {
+			localStorage.removeItem('token');
 			user.token = null;
 			user.email = null;
 			user.isAdmin = null;
