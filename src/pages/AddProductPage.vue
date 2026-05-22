@@ -69,6 +69,12 @@
 
             <div class="col-lg-7">
 
+              <div class="mb-4">
+                  <router-link :to="{ path: '/products' }" class="btn back-btn">
+                      ← Back to Admin Dashboard
+                  </router-link>
+              </div>
+
                 <div class="card add-product-card border-0 overflow-hidden">
 
                     <!-- Header -->
@@ -220,6 +226,22 @@
         radial-gradient(circle at top left, rgba(200,169,126,0.15), transparent 30%),
         #2c1f14;
     color: white;
+}
+
+.back-btn {
+    background: transparent;
+    border: 1.5px solid #d9c8b8;
+    color: #5a3e2b;
+    border-radius: 12px;
+    padding: 0.7rem 1.2rem;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+    background: #2c1f14;
+    color: white;
+    border-color: #2c1f14;
 }
 
 .header-subtitle {

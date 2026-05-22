@@ -18,6 +18,25 @@
             const products = reactive({ data: [] });
             const isLoading = ref(true);
 
+            async function fetchProducts() {
+                isLoading.value = true;
+
+                try {
+                    if (store.user.isAdmin) {
+                        let { data } = await api.get('/products/all');
+                        products.data = data;
+                    } else {
+                        let { data } = await api.get('/products/active');
+                        products.data = data;
+                    }
+                } catch (e) {
+                    console.error('Error fetching products:', e);
+                    products.data = [];
+                } finally {
+                    isLoading.value = false;
+                }
+            }
+
             watch(
                 () => store.user.isAdmin,
                 async (isAdmin) => {
@@ -43,7 +62,8 @@
             return {
                 products,
                 user: store.user,
-                isLoading
+                isLoading,
+                fetchProducts
             }
         }
     }
