@@ -1,14 +1,10 @@
 
 <script>
 
+  import { onBeforeMount } from 'vue';
+  import { useGlobalStore } from './stores/global.js';
   import NavbarComponent from './components/NavbarComponent.vue';
-
-  import {useGlobalStore} from './stores/global';
-
-
-  import {onBeforeMount} from 'vue';
-
-
+  
   export default {
 
     components: {
@@ -27,9 +23,9 @@
 <template>
 
   <NavbarComponent />
-
-  <router-view />
-
+  <main>
+      <router-view />
+  </main>
 </template>
 
 <style scoped>
