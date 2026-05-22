@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia';
 import { reactive } from 'vue';
 import api from '../api.js';
+import axios from 'axios';
 
 export const useGlobalStore = defineStore('global', () => {
 

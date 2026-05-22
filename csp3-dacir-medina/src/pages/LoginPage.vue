@@ -52,7 +52,7 @@
                 email.value = "";
                 password.value = "";
 
-                router.push({path: '/product'})
+                router.push({path: '/products'})
             } else {
 
                 notyf.error("Login Failed. Please contact administrator.");
@@ -70,7 +70,7 @@
 
     onBeforeMount(() => {
         if (localStorage.getItem("token")) {
-            router.push({ path: '/product' });
+            router.push({ path: '/products' });
         }
     });
 </script>

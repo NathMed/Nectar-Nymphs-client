@@ -39,7 +39,7 @@
                 <div class="navbar-nav ms-auto align-items-lg-center gap-lg-2 mt-3 mt-lg-0">
 
                     <router-link
-                        :to="{ path: '/product' }"
+                        :to="{ path: '/products' }"
                         class="nav-link custom-link">
 
                         Products
