@@ -86,6 +86,11 @@ export default {
 
         <!-- Product Details -->
         <div v-else-if="product" class="row justify-content-center">
+            <div class="mb-4">
+                <router-link :to="{ path: '/products' }" class="btn back-btn">
+                    ← Back to Products
+                </router-link>
+            </div>
             <div class="col-lg-10">
                 <div class="card details-card border-0 overflow-hidden">
                     <div class="row g-0">
@@ -98,6 +103,7 @@ export default {
                         </div>
 
                         <!-- Product Info -->
+
                         <div class="col-lg-6">
                             <div class="card-body p-4 p-lg-5 d-flex flex-column h-100">
                                 <div class="mb-4">
@@ -160,6 +166,22 @@ export default {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
+
+.back-btn {
+    background: transparent;
+    border: 1.5px solid #d9c8b8;
+    color: #5a3e2b;
+    border-radius: 12px;
+    padding: 0.7rem 1.2rem;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+    background: #2c1f14;
+    color: white;
+    border-color: #2c1f14;
+}
 
 .container {
     font-family: 'Lato', sans-serif;
