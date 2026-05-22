@@ -7,10 +7,10 @@
 
 ## **User Credentials:**
 - Admin User
-	- email: **admin1@mail.com**
+	- email: **admin@mail.com**
 	- password: **admin123**
 - Dummy Customer
-	- email: **customer1@mail.com**
+	- email: **customer@mail.com**
 	- password: **customer123**
 
 ## **Features:**
