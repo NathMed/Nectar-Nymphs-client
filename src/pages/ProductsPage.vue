@@ -24,10 +24,10 @@
                 try {
                     if (store.user.isAdmin) {
                         let { data } = await api.get('/products/all');
-                        products.data = data;
+                        products.data = Array.isArray(data) ? data : [];
                     } else {
                         let { data } = await api.get('/products/active');
-                        products.data = data;
+                        products.data = Array.isArray(data) ? data : [];
                     }
                 } catch (e) {
                     console.error('Error fetching products:', e);
@@ -44,10 +44,10 @@
                     try {
                         if (isAdmin) {
                             let { data } = await api.get('/products/all');
-                            products.data = data;
+                            products.data = Array.isArray(data) ? data : [];
                         } else {
                             let { data } = await api.get('/products/active');
-                            products.data = data;
+                            products.data = Array.isArray(data) ? data : [];
                         }
                     } catch (e) {
                         console.error("Error fetching products:", e);
@@ -78,7 +78,8 @@
         <AdminDashboard 
             v-if="user.isAdmin" 
             :productData="products.data"
-            :isLoading="isLoading" 
+            :isLoading="isLoading"
+            @refresh-products="fetchProducts"
         />
 
         <UserDashboard 

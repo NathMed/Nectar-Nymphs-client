@@ -14,6 +14,7 @@
             const notyf = new Notyf();
             const isUpdating = ref(false);
             const selectedProductId = ref(null);
+            const actionLoadingId = ref(null);
 
             const updateForm = reactive({
                 name: '',
@@ -40,16 +41,20 @@
             }
 
             async function updateProduct() {
+                if (!updateForm.name || !updateForm.description || !updateForm.price) {
+                    notyf.error('Please complete all product fields.');
+                    return;
+                }
 
                 try {
-                    const { data } = await api.patch(`/products/${selectedProductId.value}/update`, {
+                    await api.patch(`/products/${selectedProductId.value}/update`, {
                         name: updateForm.name,
                         description: updateForm.description,
-                        price: updateForm.price
+                        price: Number(updateForm.price)
                     });
 
-                    notyf.success(data.message);
-                    isUpdating.value = false;
+                    notyf.success('Product updated successfully.');
+                    cancelUpdate();
                     emit('refreshProducts');
                 } catch (error) {
                     notyf.error(error.response?.data?.message || error.response?.data?.error || 'Unable to update product.');
@@ -57,28 +62,37 @@
             }
 
             async function deactivateProduct(productId) {
+                actionLoadingId.value = productId;
+
                 try {
-                    const { data } = await api.patch(`/products/${productId}/archive`);
-                    notyf.success(data.message);
+                    await api.patch(`/products/${productId}/archive`);
+                    notyf.success('Product disabled successfully.');
                     emit('refreshProducts');
                 } catch (error) {
                     notyf.error(error.response?.data?.message || error.response?.data?.error || 'Unable to disable product.');
+                } finally {
+                    actionLoadingId.value = null;
                 }
             }
 
             async function activateProduct(productId) {
+                actionLoadingId.value = productId;
+
                 try {
-                    const { data } = await api.patch(`/products/${productId}/activate`);
-                    notyf.success(data.message);
+                    await api.patch(`/products/${productId}/activate`);
+                    notyf.success('Product activated successfully.');
                     emit('refreshProducts');
                 } catch (error) {
                     notyf.error(error.response?.data?.message || error.response?.data?.error || 'Unable to activate product.');
+                } finally {
+                    actionLoadingId.value = null;
                 }
             }
 
             return {
                 props,
                 isUpdating,
+                actionLoadingId,
                 updateForm,
                 setUpdateForm,
                 cancelUpdate,
@@ -325,7 +339,10 @@
                                 </td>
 
                                 <td class="text-center">
-                                    <button class="btn btn-sm update-btn" @click="setUpdateForm(product)">
+                                    <button
+                                        class="btn btn-sm update-btn"
+                                        type="button"
+                                        @click.stop.prevent="setUpdateForm(product)">
                                         Update
                                     </button>
                                 </td>
@@ -334,14 +351,20 @@
 
                                     <button
                                         v-if="product.isActive"
-                                        class="btn btn-sm disable-btn" @click="deactivateProduct(product._id)">
-                                        Disable
+                                        class="btn btn-danger btn-sm"
+                                        type="button"
+                                        :disabled="actionLoadingId === product._id"
+                                        @click.stop.prevent="deactivateProduct(product._id)">
+                                        {{ actionLoadingId === product._id ? 'Disabling...' : 'Disable' }}
                                     </button>
 
                                     <button
                                         v-else
-                                        class="btn btn-sm activate-btn" @click="activateProduct(product._id)">
-                                        Activate
+                                        class="btn btn-success btn-sm"
+                                        type="button"
+                                        :disabled="actionLoadingId === product._id"
+                                        @click.stop.prevent="activateProduct(product._id)">
+                                        {{ actionLoadingId === product._id ? 'Activating...' : 'Activate' }}
                                     </button>
                                 </td>
                             </tr>
