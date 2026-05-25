@@ -139,7 +139,7 @@ export default {
                     class="empty-orders text-center py-5">
 
                     <div class="empty-icon mb-3">
-                        📦
+                        &#128230
                     </div>
 
                     <h3 class="empty-title">
@@ -170,7 +170,7 @@ export default {
                         <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2">
 
                             <div>
-                                <small class="text-light-emphasis">
+                                <small class="text-light">
                                     Order ID
                                 </small>
 
