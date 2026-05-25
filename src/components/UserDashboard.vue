@@ -81,42 +81,42 @@
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
 
-.container {
-    font-family: 'Lato', sans-serif;
-}
+    .container {
+        font-family: 'Lato', sans-serif;
+    }
 
-.catalog-subtitle {
-    color: #c8a97e;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.8rem;
-    font-weight: 700;
-}
-
-.catalog-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    font-weight: 700;
-    color: #2c1f14;
-}
-
-.catalog-description {
-    max-width: 620px;
-    color: #8d7661;
-    line-height: 1.8;
-}
-
-.empty-title {
-    color: #2c1f14;
-    font-family: 'Playfair Display', serif;
-}
-
-@media (max-width: 768px) {
+    .catalog-subtitle {
+        color: #c8a97e;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.8rem;
+        font-weight: 700;
+    }
 
     .catalog-title {
-        font-size: 2.2rem;
+        font-family: 'Playfair Display', serif;
+        font-size: 3rem;
+        font-weight: 700;
+        color: #2c1f14;
     }
-}
+
+    .catalog-description {
+        max-width: 620px;
+        color: #8d7661;
+        line-height: 1.8;
+    }
+
+    .empty-title {
+        color: #2c1f14;
+        font-family: 'Playfair Display', serif;
+    }
+
+    @media (max-width: 768px) {
+
+        .catalog-title {
+            font-size: 2.2rem;
+        }
+    }
 </style>

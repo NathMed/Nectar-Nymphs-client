@@ -166,141 +166,141 @@ export default {
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
 
-.back-btn {
-    background: transparent;
-    border: 1.5px solid #d9c8b8;
-    color: #5a3e2b;
-    border-radius: 12px;
-    padding: 0.7rem 1.2rem;
-    font-weight: 700;
-    transition: all 0.2s ease;
-}
+    .back-btn {
+        background: transparent;
+        border: 1.5px solid #d9c8b8;
+        color: #5a3e2b;
+        border-radius: 12px;
+        padding: 0.7rem 1.2rem;
+        font-weight: 700;
+        transition: all 0.2s ease;
+    }
 
-.back-btn:hover {
-    background: #2c1f14;
-    color: white;
-    border-color: #2c1f14;
-}
+    .back-btn:hover {
+        background: #2c1f14;
+        color: white;
+        border-color: #2c1f14;
+    }
 
-.container {
-    font-family: 'Lato', sans-serif;
-}
+    .container {
+        font-family: 'Lato', sans-serif;
+    }
 
-.details-card {
-    border-radius: 24px;
-    background: #fffdfb;
-    box-shadow: 0 15px 50px rgba(44,31,20,0.08);
-}
-
-.details-image {
-    min-height: 100%;
-    height: 100%;
-    min-height: 550px;
-    background:
-        linear-gradient(rgba(44,31,20,0.35), rgba(44,31,20,0.35)),
-        url('../assets/images/placeholder-image.jpg');
-    background-size: cover;
-    background-position: center;
-}
-
-.details-image-text {
-    color: white;
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-}
-
-.product-category {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.75rem;
-    color: #c8a97e;
-    font-weight: 700;
-}
-
-.details-title {
-    font-family: 'Playfair Display', serif;
-    color: #2c1f14;
-    font-size: 2.5rem;
-    font-weight: 700;
-}
-
-.details-description {
-    color: #7c6754;
-    line-height: 1.9;
-    font-size: 1rem;
-}
-
-.details-price {
-    color: #c97d60;
-    font-weight: 700;
-}
-
-.quantity-label {
-    color: #5a3e2b;
-    font-weight: 700;
-}
-
-.quantity-btn {
-    width: 42px;
-    height: 42px;
-    border-radius: 10px;
-    border: 1px solid #e6d9cc;
-    background: white;
-    font-size: 1.2rem;
-    font-weight: 700;
-}
-
-.quantity-btn:hover {
-    background: #2c1f14;
-    color: white;
-}
-
-.quantity-display {
-    min-width: 60px;
-    text-align: center;
-    border: 1px solid #e6d9cc;
-    border-radius: 10px;
-    padding: 0.55rem 1rem;
-}
-
-.subtotal-box {
-    background: #f9f3ed;
-    border-radius: 14px;
-    padding: 1rem 1.2rem;
-    color: #5a3e2b;
-}
-
-.subtotal-price {
-    color: #c97d60;
-    font-weight: 700;
-    font-size: 1.1rem;
-}
-
-.add-cart-btn {
-    background: #2c1f14;
-    color: white;
-    border-radius: 14px;
-    padding: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    border: none;
-}
-
-.add-cart-btn:hover {
-    background: #c8a97e;
-    color: #2c1f14;
-}
-
-@media (max-width: 991px) {
+    .details-card {
+        border-radius: 24px;
+        background: #fffdfb;
+        box-shadow: 0 15px 50px rgba(44,31,20,0.08);
+    }
 
     .details-image {
-        min-height: 300px;
+        min-height: 100%;
+        height: 100%;
+        min-height: 550px;
+        background:
+            linear-gradient(rgba(44,31,20,0.35), rgba(44,31,20,0.35)),
+            url('../assets/images/placeholder-image.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .details-image-text {
+        color: white;
+        font-family: 'Playfair Display', serif;
+        font-size: 2rem;
+    }
+
+    .product-category {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.75rem;
+        color: #c8a97e;
+        font-weight: 700;
     }
 
     .details-title {
-        font-size: 2rem;
+        font-family: 'Playfair Display', serif;
+        color: #2c1f14;
+        font-size: 2.5rem;
+        font-weight: 700;
     }
-}
+
+    .details-description {
+        color: #7c6754;
+        line-height: 1.9;
+        font-size: 1rem;
+    }
+
+    .details-price {
+        color: #c97d60;
+        font-weight: 700;
+    }
+
+    .quantity-label {
+        color: #5a3e2b;
+        font-weight: 700;
+    }
+
+    .quantity-btn {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        border: 1px solid #e6d9cc;
+        background: white;
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+
+    .quantity-btn:hover {
+        background: #2c1f14;
+        color: white;
+    }
+
+    .quantity-display {
+        min-width: 60px;
+        text-align: center;
+        border: 1px solid #e6d9cc;
+        border-radius: 10px;
+        padding: 0.55rem 1rem;
+    }
+
+    .subtotal-box {
+        background: #f9f3ed;
+        border-radius: 14px;
+        padding: 1rem 1.2rem;
+        color: #5a3e2b;
+    }
+
+    .subtotal-price {
+        color: #c97d60;
+        font-weight: 700;
+        font-size: 1.1rem;
+    }
+
+    .add-cart-btn {
+        background: #2c1f14;
+        color: white;
+        border-radius: 14px;
+        padding: 0.9rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        border: none;
+    }
+
+    .add-cart-btn:hover {
+        background: #c8a97e;
+        color: #2c1f14;
+    }
+
+    @media (max-width: 991px) {
+
+        .details-image {
+            min-height: 300px;
+        }
+
+        .details-title {
+            font-size: 2rem;
+        }
+    }
 </style>

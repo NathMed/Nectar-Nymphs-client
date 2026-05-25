@@ -52,7 +52,7 @@
                 email.value = "";
                 password.value = "";
 
-                router.push({path: '/products'})
+                router.push({path: '/'})
             } else {
 
                 notyf.error("Login Failed. Please contact administrator.");
@@ -172,135 +172,135 @@
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400;700&display=swap');
 
-.login-page {
-    background: #fdf8f2;
-    font-family: 'Lato', sans-serif;
-}
+    .login-page {
+        background: #fdf8f2;
+        font-family: 'Lato', sans-serif;
+    }
 
-/* Brand Panel */
-.brand-panel {
-    background:
-        radial-gradient(ellipse at 20% 80%, rgba(200,169,126,0.15) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 20%, rgba(200,169,126,0.1) 0%, transparent 50%),
-        #2c1f14;
-    padding: 3rem;
-}
-
-.brand-panel__inner {
-    max-width: 340px;
-}
-
-.brand-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    color: #f5ece0;
-    font-weight: 600;
-}
-
-.brand-name span {
-    color: #c8a97e;
-    font-style: italic;
-}
-
-.brand-tagline {
-    color: #b79d84;
-    line-height: 1.7;
-    margin-top: 1rem;
-}
-
-.brand-divider {
-    width: 50px;
-    height: 1px;
-    background: #c8a97e;
-    margin: 2rem 0;
-}
-
-.brand-perks li {
-    color: #ceb8a2;
-    font-size: 0.95rem;
-}
-
-/* Form */
-.form-wrapper {
-    max-width: 430px;
-}
-
-.form-title {
-    font-family: 'Playfair Display', serif;
-    color: #2c1f14;
-    font-size: 2rem;
-    font-weight: 600;
-}
-
-.form-subtitle {
-    color: #9c836b;
-}
-
-.custom-label {
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    color: #5a3e2b;
-}
-
-.custom-input {
-    height: 48px;
-    border-radius: 10px;
-    border: 1.5px solid #e6d9cc;
-}
-
-.custom-input:focus {
-    border-color: #c8a97e;
-    box-shadow: 0 0 0 0.25rem rgba(200,169,126,0.15);
-}
-
-/* Button */
-.submit-btn {
-    height: 50px;
-    border-radius: 10px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    background: #e6d9cc;
-    color: #a8917a;
-    border: none;
-}
-
-.submit-btn--active {
-    background: #2c1f14;
-    color: #fff;
-}
-
-.submit-btn--active:hover {
-    background: #c8a97e;
-    color: #2c1f14;
-}
-
-/* Link */
-.register-link {
-    color: #9c836b;
-}
-
-.register-link a {
-    color: #c8a97e;
-    text-decoration: none;
-    font-weight: 700;
-}
-
-.register-link a:hover {
-    text-decoration: underline;
-}
-
-@media (max-width: 991px) {
+    /* Brand Panel */
     .brand-panel {
-        min-height: 320px;
+        background:
+            radial-gradient(ellipse at 20% 80%, rgba(200,169,126,0.15) 0%, transparent 60%),
+            radial-gradient(ellipse at 80% 20%, rgba(200,169,126,0.1) 0%, transparent 50%),
+            #2c1f14;
+        padding: 3rem;
+    }
+
+    .brand-panel__inner {
+        max-width: 340px;
+    }
+
+    .brand-name {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.5rem;
+        color: #f5ece0;
+        font-weight: 600;
+    }
+
+    .brand-name span {
+        color: #c8a97e;
+        font-style: italic;
+    }
+
+    .brand-tagline {
+        color: #b79d84;
+        line-height: 1.7;
+        margin-top: 1rem;
     }
 
     .brand-divider {
-        margin-inline: auto;
+        width: 50px;
+        height: 1px;
+        background: #c8a97e;
+        margin: 2rem 0;
     }
-}
+
+    .brand-perks li {
+        color: #ceb8a2;
+        font-size: 0.95rem;
+    }
+
+    /* Form */
+    .form-wrapper {
+        max-width: 430px;
+    }
+
+    .form-title {
+        font-family: 'Playfair Display', serif;
+        color: #2c1f14;
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    .form-subtitle {
+        color: #9c836b;
+    }
+
+    .custom-label {
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        color: #5a3e2b;
+    }
+
+    .custom-input {
+        height: 48px;
+        border-radius: 10px;
+        border: 1.5px solid #e6d9cc;
+    }
+
+    .custom-input:focus {
+        border-color: #c8a97e;
+        box-shadow: 0 0 0 0.25rem rgba(200,169,126,0.15);
+    }
+
+    /* Button */
+    .submit-btn {
+        height: 50px;
+        border-radius: 10px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        background: #e6d9cc;
+        color: #a8917a;
+        border: none;
+    }
+
+    .submit-btn--active {
+        background: #2c1f14;
+        color: #fff;
+    }
+
+    .submit-btn--active:hover {
+        background: #c8a97e;
+        color: #2c1f14;
+    }
+
+    /* Link */
+    .register-link {
+        color: #9c836b;
+    }
+
+    .register-link a {
+        color: #c8a97e;
+        text-decoration: none;
+        font-weight: 700;
+    }
+
+    .register-link a:hover {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 991px) {
+        .brand-panel {
+            min-height: 320px;
+        }
+
+        .brand-divider {
+            margin-inline: auto;
+        }
+    }
 </style>

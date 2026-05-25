@@ -16,6 +16,8 @@ import LogoutPage from './pages/LogoutPage.vue';
 import ProductDetailsPage from './pages/ProductDetailsPage.vue';
 import AddProductPage from './pages/AddProductPage.vue';
 import CartViewPage from './pages/CartViewPage.vue';
+import OrderPage from './pages/OrderPage.vue';
+import HomePage from './pages/HomePage.vue';
 
 // ROUTES
 import { createApp } from 'vue';
@@ -25,9 +27,11 @@ import { createRouter, createWebHistory } from 'vue-router';
 const router = createRouter({
     history: createWebHistory(),
     routes: [
+
         {
             path: '/',
-            redirect: '/products'
+            name: 'Homepage',
+            component: HomePage
         },
         {
             path: '/register',
@@ -62,6 +66,11 @@ const router = createRouter({
             path: '/cart',
             name: 'CartView',
             component: CartViewPage
+        },
+        {
+            path: '/orders',
+            name: 'OrderPage',
+            component: OrderPage
         }
     ]
 });
