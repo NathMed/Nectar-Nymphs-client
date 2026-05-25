@@ -50,6 +50,7 @@ export default {
                 }
 
                 await api.post('/cart/add-to-cart', {
+                    name: product.value.name,
                     productId: product.value._id,
                     quantity: quantity.value,
                     subtotal: product.value.price * quantity.value
