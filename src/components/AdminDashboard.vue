@@ -15,7 +15,6 @@
             const isUpdating = ref(false);
             const selectedProductId = ref(null);
             const actionLoadingId = ref(null);
-
             const updateForm = reactive({
                 name: '',
                 description: '',
@@ -47,13 +46,13 @@
                 }
 
                 try {
-                    await api.patch(`/products/${selectedProductId.value}/update`, {
+                    const { data } = await api.patch(`/products/${selectedProductId.value}/update`, {
                         name: updateForm.name,
                         description: updateForm.description,
                         price: Number(updateForm.price)
                     });
 
-                    notyf.success('Product updated successfully.');
+                    notyf.success(data.message);
                     cancelUpdate();
                     emit('refreshProducts');
                 } catch (error) {
@@ -65,8 +64,8 @@
                 actionLoadingId.value = productId;
 
                 try {
-                    await api.patch(`/products/${productId}/archive`);
-                    notyf.success('Product disabled successfully.');
+                    const { data } = await api.patch(`/products/${productId}/archive`);
+                    notyf.success(data.message);
                     emit('refreshProducts');
                 } catch (error) {
                     notyf.error(error.response?.data?.message || error.response?.data?.error || 'Unable to disable product.');
@@ -79,8 +78,8 @@
                 actionLoadingId.value = productId;
 
                 try {
-                    await api.patch(`/products/${productId}/activate`);
-                    notyf.success('Product activated successfully.');
+                    const { data } = await api.patch(`/products/${productId}/activate`);
+                    notyf.success(data.message);
                     emit('refreshProducts');
                 } catch (error) {
                     notyf.error(error.response?.data?.message || error.response?.data?.error || 'Unable to activate product.');
@@ -351,7 +350,7 @@
 
                                     <button
                                         v-if="product.isActive"
-                                        class="btn btn-danger btn-sm"
+                                        class="btn btn-sm disable-btn"
                                         type="button"
                                         :disabled="actionLoadingId === product._id"
                                         @click.stop.prevent="deactivateProduct(product._id)">
@@ -360,7 +359,7 @@
 
                                     <button
                                         v-else
-                                        class="btn btn-success btn-sm"
+                                        class="btn btn-sm activate-btn"
                                         type="button"
                                         :disabled="actionLoadingId === product._id"
                                         @click.stop.prevent="activateProduct(product._id)">
