@@ -184,7 +184,9 @@ export default {
 
                 notyf.success(data.message || 'Checkout successful.');
                 await getAllItems();
+
                 router.push({ path: '/orders' });
+
             } catch (error) {
                 notyf.error(error.response?.data?.message || error.response?.data?.error || 'Checkout failed.');
             }
@@ -247,7 +249,7 @@ export default {
             class="empty-cart text-center py-5">
 
             <div class="empty-icon mb-3">
-                🛒
+                &#128722
             </div>
 
             <h3 class="empty-title">
@@ -313,7 +315,7 @@ export default {
                                         <div class="d-flex align-items-center gap-3">
 
                                             <div class="product-placeholder">
-                                                ☕
+                                                &#9749
                                             </div>
 
                                             <div>
