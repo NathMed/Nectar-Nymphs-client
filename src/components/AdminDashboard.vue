@@ -278,7 +278,7 @@
                 </router-link>
 
                 <router-link
-                    :to="{ path: '/cart' }"
+                    :to="{ path: '/orders' }"
                     class="btn admin-btn admin-btn-success">
                     View User Orders
                 </router-link>
