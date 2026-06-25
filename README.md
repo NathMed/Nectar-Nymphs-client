@@ -257,10 +257,3 @@ Authorization: Bearer <token>
 7. Shopping cart is cleared automatically after successful checkout.
 
 ---
-
-## 📁 Project Structure
-
-```txt
-client/
-server/
-```
